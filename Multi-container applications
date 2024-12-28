@@ -1,0 +1,23 @@
+Clone the repository at https://github.com/docker/multi-container-app⁠.
+git clone https://github.com/docker/multi-container-app
+This is a simple todo application built using ExpressJS and Node. All todos are saved in a MongoDB database.
+
+A To-Do Application is a type of software that helps users manage their tasks and organize their workflow by allowing them to create, update, and track a list of tasks. 
+If you view the code of the sample application, you will notice that it has a compose.yaml file. This file tells Docker how to run your application. 
+Open the compose.yaml file in a text editor to explore the instructions.
+
+We are going to run this application with the docker compose up command in your project directory. This command builds and runs all the services listed in the compose file.
+docker compose up -d
+
+In Docker Desktop, you should now have two containers running (the todo-app, and todo-database). To view the frontend, expand the app stack in Containers and select the link to localhost:3000⁠.
+Add some tasks in the frontend, and then open the app in a new tab. Notice that the tasks are still visible.
+When developing with Docker, you may need to automatically update and preview your running services as you edit and save your code. We use docker compose watch for this.
+Run the following command to run your project with compose watch.
+docker compose watch
+
+Having your configuration stored in a Compose file has another advantage, you can easily delete everything and restart.
+
+Simply select the app stack, and then select Delete on Docker Desktop. When you want to restart, run docker compose up in the project folder again. This will restart your application again.
+Note that when the db container is deleted, any todos created are also lost.
+
+You just saw how to run multiple containers at the same time. However, when the db container was deleted and recreated you lost all the todos. Next you can learn how to persist data in the db container.
