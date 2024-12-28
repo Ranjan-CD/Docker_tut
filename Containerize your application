@@ -1,0 +1,17 @@
+When working with containers, you usually need to create a Dockerfile to define your image and a compose.yaml file to define how to run it.
+To help you create these files, Docker has a command called docker init. Run this command in a project folder, and Docker will create all the required files needed. 
+In this guide, you will see how this works.
+
+Open your project folder in the terminal and run the following command:
+
+docker init
+Docker will detect the language of your project and prompt you to select a language.
+You can select your language if it is in the list, or select Other if your language isn't in the list.
+
+docker init walks you through a few questions to configure your project with sensible defaults.
+
+Once you have answered all the questions, you may run docker compose up to run your project.
+
+There is a chance, however, that the Dockerfile and compose.yaml file created for your project need additional changes. 
+In this case, you may need to look up the Dockerfile reference⁠ and Compose file reference⁠ in our documentation. 
+We try our best to do the heavy lifting for you, but sometimes there's some assembly required.
