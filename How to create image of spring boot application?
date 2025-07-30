@@ -1,0 +1,21 @@
+How to create image of spring boot application?
+
+first create jar of application through the below command 
+mvn package
+
+docker search openjdk
+docker pull openjdk:26-oraclelinux8
+docker images
+
+now run the container i.e docker run -it {image_name}
+docker run -it openjdk:26-oraclelinux8
+
+step to copy jar of application into container 
+
+docker exec {image_name}priceless_herschel ls -a
+docker exec priceless_herschel ls /tmp
+docker cp targert/rest-demo.jar priceless_herschel:/tmp
+
+how to create image 
+docker commit distracted_lewin giri/rest-demo:v1
+docker run -p 8080:8080 giri/rest-demo:v1 java -jar /tmp/rest-demo.jar
