@@ -1,0 +1,6 @@
+how to push image into docker Hub
+
+docker login
+docker tag giri/rest-demo:v2 ranjan292001/rest-demo:v2
+docker push ranjan292001/rest-demo:v2 
+
